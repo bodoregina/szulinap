@@ -1,151 +1,264 @@
 <!DOCTYPE html>
+
 <html lang="hu">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tomi szülinapi hadművelet</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #141e30, #243b55);
-      color: white;
-      text-align: center;
-      padding: 25px;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tomi 33 - Szülinapi Hadművelet</title>
 
-    .card {
-      max-width: 700px;
-      margin: 30px auto;
-      background: rgba(255,255,255,0.12);
-      padding: 30px;
-      border-radius: 25px;
-      box-shadow: 0 10px 35px rgba(0,0,0,0.3);
-    }
+<style>
+body{
+    margin:0;
+    padding:25px;
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#141e30,#243b55);
+    color:white;
+    text-align:center;
+}
 
-    h1 { font-size: 38px; margin-bottom: 10px; }
-    .subtitle { font-size: 20px; opacity: 0.9; }
-    .meme { font-size: 60px; margin: 25px 0; }
+.card{
+    max-width:800px;
+    margin:30px auto;
+    background:rgba(255,255,255,0.12);
+    padding:30px;
+    border-radius:25px;
+    box-shadow:0 10px 35px rgba(0,0,0,.3);
+}
 
-    .program {
-      background: rgba(255,255,255,0.16);
-      margin: 20px 0;
-      padding: 22px;
-      border-radius: 20px;
-    }
+h1{
+    font-size:38px;
+    margin-bottom:10px;
+}
 
-    button, a.button {
-      display: inline-block;
-      margin: 10px;
-      padding: 14px 22px;
-      background: #ffcc00;
-      color: #111;
-      text-decoration: none;
-      border: none;
-      border-radius: 999px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-    }
+.subtitle{
+    font-size:20px;
+    opacity:.9;
+}
 
-    button:hover, a.button:hover { transform: scale(1.05); }
-    .hidden { display: none; }
-    .small { font-size: 14px; opacity: 0.8; margin-top: 30px; }
-  </style>
+.meme{
+    font-size:60px;
+    margin:25px 0;
+}
+
+.program{
+    background:rgba(255,255,255,.16);
+    margin:20px 0;
+    padding:22px;
+    border-radius:20px;
+}
+
+button,
+a.button{
+    display:inline-block;
+    margin:10px;
+    padding:14px 22px;
+    background:#ffcc00;
+    color:#111;
+    text-decoration:none;
+    border:none;
+    border-radius:999px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover,
+a.button:hover{
+    transform:scale(1.05);
+}
+
+.hidden{
+    display:none;
+}
+
+#movieChoice{
+    font-size:22px;
+    font-weight:bold;
+    margin-top:20px;
+}
+
+.small{
+    margin-top:40px;
+    opacity:.8;
+    font-size:14px;
+}
+</style>
+
 </head>
 
 <body>
 
-  <div class="card">
+<div class="card">
     <h1>🎂 Tomi 33 lett 🎂</h1>
-    <p class="subtitle">Hivatalos szülinapi hadművelet indul.</p>
 
-    <div class="meme">😎🍽️🎁</div>
+```
+<p class="subtitle">
+    Hivatalos szülinapi hadművelet indul.
+</p>
+
+<div class="meme">😎🍽️🎬🎁</div>
+
+<p>
+    Kedves Tomi!<br><br>
+
+    A mai nap célja:
+    <br>
+    ✔ enni valami jót
+    <br>
+    ✔ jól érezni magad
+    <br>
+    ✔ túlélni a meglepetéseket
+    <br>
+    ✔ úgy tenni, mintha nem lennél meghatódva
+</p>
+
+<button onclick="showDinner()">
+    🚀 Kérem a programot, főnök
+</button>
+```
+
+</div>
+
+<div id="dinner" class="card hidden">
+
+```
+<h2>🍽️ Első küldetés</h2>
+
+<div class="program">
+    <h3>COCOON Restaurant</h3>
 
     <p>
-      Kedves Tomi!<br>
-      A mai nap célja: túlélni a meglepetéseket, enni valami jót,
-      és közben úgy tenni, mintha nem lennél meghatódva.
+        Kezdésként nem szenvedünk,
+        hanem eszünk.
     </p>
 
-    <button onclick="showProgram()">Kérem a programot, főnök</button>
-  </div>
+    <a class="button"
+       target="_blank"
+       href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x474489005dd632cf:0x960149342754efee?sa=X&ved=1t:8290&ictx=111">
+        📍 Térkép megnyitása
+    </a>
+</div>
 
-  <div id="programok" class="card hidden">
-    <h2>📍 Mai küldetések</h2>
+<button onclick="showMovie()">
+    ✅ Túléltem a vacsorát
+</button>
+```
 
-    <div class="program">
-      <h3>🍽️ Első küldetés – Vacsora</h3>
-      <p>
-        Kezdésként nem szenvedünk, hanem eszünk.<br>
-        Helyszín: <b>COCOON Restaurant</b>
-      </p>
+</div>
 
-      <a class="button" target="_blank"
-         href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x474489005dd632cf:0x960149342754efee?sa=X&ved=1t:8290&ictx=111">
-        📍 COCOON megnyitása térképen
-      </a>
-    </div>
+<div id="movieSection" class="card hidden">
 
-    <div class="program">
-      <h3>🎬 Második küldetés – Mozi</h3>
-      <p>
-        A tervezett film sajnos kiesett a rostán, ezért most demokratikus diktatúra van:
-        Tomi választhat filmet.
-      </p>
+```
+<h2>🎬 Második küldetés</h2>
 
-      <a class="button" target="_blank"
-         href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x474487ef3a185823:0x8844a2ac76936764?sa=X&ved=1t:8290&ictx=111">
-        📍 Mozi megnyitása térképen
-      </a>
+<div class="program">
 
-      <h4>Választható filmek:</h4>
+    <h3>Mozi</h3>
 
-      <button onclick="chooseMovie('A mandalóri és Grogu')">A mandalóri és Grogu</button>
-      <button onclick="chooseMovie('A zongorahangoló')">A zongorahangoló</button>
-      <button onclick="chooseMovie('Az univerzum védelmezői')">Az univerzum védelmezői</button>
-      <button onclick="chooseMovie('Birkakrimi')">Birkakrimi</button>
-      <button onclick="chooseMovie('Horrorra akadva')">Horrorra akadva</button>
-      <button onclick="chooseMovie('Toy Story 5')">Toy Story 5</button>
-
-      <p id="movieChoice" style="font-size:20px; font-weight:bold; margin-top:20px;"></p>
-
-      <a class="button" target="_blank"
-         href="https://www.cinemacity.hu/cinemas/szeged/1126#/buy-tickets-by-cinema?in-cinema=1126&at=2026-06-23&view-mode=list">
-        🎟️ Időpontok és jegyek
-      </a>
-    </div>
-
-    <button onclick="showSecret()">Mi jön utána?</button>
-  </div>
-
-  <div id="titok" class="card hidden">
-    <h2>🤫 A többi program...</h2>
     <p>
-      ...egyelőre titkos.<br><br>
-      Türelem. A szülinapi bizottság dolgozik.
+        Az eredeti filmterv sajnos meghiúsult.
+        <br><br>
+        Ezért a szülinapi bizottság
+        rendkívüli jogköröket biztosít:
+        <br>
+        Te választhatod ki a filmet.
     </p>
-    <div class="meme">🕵️‍♂️🎉</div>
-  </div>
 
-  <p class="small">
+    <a class="button"
+       target="_blank"
+       href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x474487ef3a185823:0x8844a2ac76936764?sa=X&ved=1t:8290&ictx=111">
+        📍 Mozi megnyitása
+    </a>
+
+    <br>
+
+    <button onclick="chooseMovie('A mandalóri és Grogu')">
+        A mandalóri és Grogu
+    </button>
+
+    <button onclick="chooseMovie('A zongorahangoló')">
+        A zongorahangoló
+    </button>
+
+    <button onclick="chooseMovie('Az univerzum védelmezői')">
+        Az univerzum védelmezői
+    </button>
+
+    <button onclick="chooseMovie('Birkakrimi')">
+        Birkakrimi
+    </button>
+
+    <button onclick="chooseMovie('Horrorra akadva')">
+        Horrorra akadva
+    </button>
+
+    <button onclick="chooseMovie('Toy Story 5')">
+        Toy Story 5
+    </button>
+
+    <p id="movieChoice"></p>
+
+    <a class="button"
+       target="_blank"
+       href="https://www.cinemacity.hu/cinemas/szeged/1126#/buy-tickets-by-cinema?in-cinema=1126&at=2026-06-23&view-mode=list">
+        🎟️ Vetítések és jegyek
+    </a>
+
+</div>
+
+<button onclick="showSecret()">
+    🤫 Mi jön még?
+</button>
+```
+
+</div>
+
+<div id="secret" class="card hidden">
+
+```
+<h2>🤫 További információ</h2>
+
+<p>
+    A szülinapi bizottság szerint
+    egyelőre ennyi információ elegendő.
+    <br><br>
+    A következő meglepetés
+    megfelelő időben kerül nyilvánosságra.
+</p>
+
+<div class="meme">🕵️‍♂️🎉</div>
+```
+
+</div>
+
+<p class="small">
     Készült szeretettel, minimális technikai pánikkal.
-  </p>
+</p>
 
-  <script>
-    function showProgram() {
-      document.getElementById("programok").classList.remove("hidden");
-    }
+<script>
 
-    function showSecret() {
-      document.getElementById("titok").classList.remove("hidden");
-    }
+function showDinner(){
+    document.getElementById("dinner").classList.remove("hidden");
+}
 
-    function chooseMovie(movie) {
-      document.getElementById("movieChoice").innerHTML =
-        "Tomi döntése: " + movie + " 🎬<br>Most már nincs visszaút.";
-    }
-  </script>
+function showMovie(){
+    document.getElementById("movieSection").classList.remove("hidden");
+}
+
+function showSecret(){
+    document.getElementById("secret").classList.remove("hidden");
+}
+
+function chooseMovie(movie){
+
+    document.getElementById("movieChoice").innerHTML =
+    "🎬 Tomi döntése:<br><br><b>" +
+    movie +
+    "</b><br><br>A szülinapi bizottság tudomásul vette a döntést. 😎";
+
+}
+
+</script>
 
 </body>
 </html>
