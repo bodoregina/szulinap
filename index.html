@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="hu">
 <head>
 <meta charset="UTF-8">
@@ -67,6 +66,11 @@ a.button:hover{
     transform:scale(1.05);
 }
 
+.selected{
+    background:#4CAF50 !important;
+    color:white !important;
+}
+
 .hidden{
     display:none;
 }
@@ -83,7 +87,6 @@ a.button:hover{
     font-size:14px;
 }
 </style>
-
 </head>
 
 <body>
@@ -91,143 +94,134 @@ a.button:hover{
 <div class="card">
     <h1>🎂 Tomi 33 lett 🎂</h1>
 
-```
-<p class="subtitle">
-    Hivatalos szülinapi hadművelet indul.
-</p>
+    <p class="subtitle">
+        Hivatalos szülinapi hadművelet indul.
+    </p>
 
-<div class="meme">😎🍽️🎬🎁</div>
+    <div class="meme">😎🍽️🎬🎁</div>
 
-<p>
-    Kedves Tomi!<br><br>
+    <p>
+        Kedves Tomi!<br><br>
 
-    A mai nap célja:
-    <br>
-    ✔ enni valami jót
-    <br>
-    ✔ jól érezni magad
-    <br>
-    ✔ túlélni a meglepetéseket
-    <br>
-    ✔ úgy tenni, mintha nem lennél meghatódva
-</p>
+        A mai nap célja:
+        <br>
+        ✔ enni egy finomat
+        <br>
+        ✔ jól érezni magad
+        <br>
+        ✔ kiválasztani a meglepetéseket
+        <br>
+        ✔ és úgy tenni, mintha nem lennél meghatódva
+    </p>
 
-<button onclick="showDinner()">
-    🚀 Kérem a programot, főnök
-</button>
-```
-
+    <button onclick="showDinner()">
+        🚀 Kérem a programot, főnök
+    </button>
 </div>
 
 <div id="dinner" class="card hidden">
 
-```
-<h2>🍽️ Első küldetés</h2>
+    <h2>🍽️ Első küldetés</h2>
 
-<div class="program">
-    <h3>COCOON Restaurant</h3>
+    <div class="program">
+        <h3>COCOON Restaurant</h3>
 
-    <p>
-        Kezdésként nem szenvedünk,
-        hanem eszünk.
-    </p>
+        <p>
+            Kezdésként nem szenvedünk,
+            hanem eszünk.
+        </p>
 
-    <a class="button"
-       target="_blank"
-       href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x474489005dd632cf:0x960149342754efee?sa=X&ved=1t:8290&ictx=111">
-        📍 Térkép megnyitása
-    </a>
-</div>
+        <a class="button"
+           target="_blank"
+           href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x474489005dd632cf:0x960149342754efee?sa=X&ved=1t:8290&ictx=111">
+            📍 Térkép megnyitása
+        </a>
+    </div>
 
-<button onclick="showMovie()">
-    ✅ Túléltem a vacsorát
-</button>
-```
+    <button onclick="showMovie()">
+        ✅ Ízlett a vacsora
+    </button>
 
 </div>
 
 <div id="movieSection" class="card hidden">
 
-```
-<h2>🎬 Második küldetés</h2>
+    <h2>🎬 Második küldetés</h2>
 
-<div class="program">
+    <div class="program">
 
-    <h3>Mozi</h3>
+        <h3>Mozi</h3>
 
-    <p>
-        Az eredeti filmterv sajnos meghiúsult.
-        <br><br>
-        Ezért a szülinapi bizottság
-        rendkívüli jogköröket biztosít:
+        <p>
+            Az eredeti filmterv sajnos meghiúsult.
+            <br><br>
+            Ezért a szülinapi bizottság
+            rendkívüli jogköröket biztosít:
+            <br>
+            Te választhatod ki a filmet.
+        </p>
+
+        <a class="button"
+           target="_blank"
+           href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x474487ef3a185823:0x8844a2ac76936764?sa=X&ved=1t:8290&ictx=111">
+            📍 Mozi megnyitása
+        </a>
+
         <br>
-        Te választhatod ki a filmet.
-    </p>
 
-    <a class="button"
-       target="_blank"
-       href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x474487ef3a185823:0x8844a2ac76936764?sa=X&ved=1t:8290&ictx=111">
-        📍 Mozi megnyitása
-    </a>
+        <button class="movie-btn" onclick="chooseMovie('A mandalóri és Grogu', this)">
+            A mandalóri és Grogu
+        </button>
 
-    <br>
+        <button class="movie-btn" onclick="chooseMovie('A zongorahangoló', this)">
+            A zongorahangoló
+        </button>
 
-    <button onclick="chooseMovie('A mandalóri és Grogu')">
-        A mandalóri és Grogu
+        <button class="movie-btn" onclick="chooseMovie('Az univerzum védelmezői', this)">
+            Az univerzum védelmezői
+        </button>
+
+        <button class="movie-btn" onclick="chooseMovie('Birkakrimi', this)">
+            Birkakrimi
+        </button>
+
+        <button class="movie-btn" onclick="chooseMovie('Horrorra akadva', this)">
+            Horrorra akadva
+        </button>
+
+        <button class="movie-btn" onclick="chooseMovie('Toy Story 5', this)">
+            Toy Story 5
+        </button>
+
+        <p id="movieChoice"></p>
+
+        <a class="button"
+           target="_blank"
+           href="https://www.cinemacity.hu/cinemas/szeged/1126#/buy-tickets-by-cinema?in-cinema=1126&at=2026-06-23&view-mode=list">
+            🎟️ Vetítések és jegyek
+        </a>
+
+    </div>
+
+    <button onclick="showSecret()">
+        🤫 Mi jön még?
     </button>
-
-    <button onclick="chooseMovie('A zongorahangoló')">
-        A zongorahangoló
-    </button>
-
-    <button onclick="chooseMovie('Az univerzum védelmezői')">
-        Az univerzum védelmezői
-    </button>
-
-    <button onclick="chooseMovie('Birkakrimi')">
-        Birkakrimi
-    </button>
-
-    <button onclick="chooseMovie('Horrorra akadva')">
-        Horrorra akadva
-    </button>
-
-    <button onclick="chooseMovie('Toy Story 5')">
-        Toy Story 5
-    </button>
-
-    <p id="movieChoice"></p>
-
-    <a class="button"
-       target="_blank"
-       href="https://www.cinemacity.hu/cinemas/szeged/1126#/buy-tickets-by-cinema?in-cinema=1126&at=2026-06-23&view-mode=list">
-        🎟️ Vetítések és jegyek
-    </a>
-
-</div>
-
-<button onclick="showSecret()">
-    🤫 Mi jön még?
-</button>
-```
 
 </div>
 
 <div id="secret" class="card hidden">
 
-```
-<h2>🤫 További információ</h2>
+    <h2>🤫 További információ</h2>
 
-<p>
-    A szülinapi bizottság szerint
-    egyelőre ennyi információ elegendő.
-    <br><br>
-    A következő meglepetés
-    megfelelő időben kerül nyilvánosságra.
-</p>
+    <p>
+        A szülinapi bizottság szerint
+        egyelőre ennyi információ elegendő.
+        <br><br>
+        A következő meglepetés
+        megfelelő időben kerül nyilvánosságra.
+    </p>
 
-<div class="meme">🕵️‍♂️🎉</div>
-```
+    <div class="meme">🕵️‍♂️🎉</div>
 
 </div>
 
@@ -236,7 +230,6 @@ a.button:hover{
 </p>
 
 <script>
-
 function showDinner(){
     document.getElementById("dinner").classList.remove("hidden");
 }
@@ -249,15 +242,18 @@ function showSecret(){
     document.getElementById("secret").classList.remove("hidden");
 }
 
-function chooseMovie(movie){
+function chooseMovie(movie, button){
+    document.querySelectorAll(".movie-btn").forEach(function(btn){
+        btn.classList.remove("selected");
+    });
+
+    button.classList.add("selected");
 
     document.getElementById("movieChoice").innerHTML =
     "🎬 Tomi döntése:<br><br><b>" +
     movie +
     "</b><br><br>A szülinapi bizottság tudomásul vette a döntést. 😎";
-
 }
-
 </script>
 
 </body>
