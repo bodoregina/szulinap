@@ -23,20 +23,9 @@
       box-shadow: 0 10px 35px rgba(0,0,0,0.3);
     }
 
-    h1 {
-      font-size: 38px;
-      margin-bottom: 10px;
-    }
-
-    .subtitle {
-      font-size: 20px;
-      opacity: 0.9;
-    }
-
-    .meme {
-      font-size: 60px;
-      margin: 25px 0;
-    }
+    h1 { font-size: 38px; margin-bottom: 10px; }
+    .subtitle { font-size: 20px; opacity: 0.9; }
+    .meme { font-size: 60px; margin: 25px 0; }
 
     .program {
       background: rgba(255,255,255,0.16);
@@ -59,21 +48,12 @@
       cursor: pointer;
     }
 
-    button:hover, a.button:hover {
-      transform: scale(1.05);
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    .small {
-      font-size: 14px;
-      opacity: 0.8;
-      margin-top: 30px;
-    }
+    button:hover, a.button:hover { transform: scale(1.05); }
+    .hidden { display: none; }
+    .small { font-size: 14px; opacity: 0.8; margin-top: 30px; }
   </style>
 </head>
+
 <body>
 
   <div class="card">
@@ -92,52 +72,61 @@
   </div>
 
   <div id="programok" class="card hidden">
-    <h2>📍 Első küldetés</h2>
+    <h2>📍 Mai küldetések</h2>
 
     <div class="program">
-      <h3>🍽️ Vacsora – COCOON Restaurant</h3>
+      <h3>🍽️ Első küldetés – Vacsora</h3>
       <p>
         Kezdésként nem szenvedünk, hanem eszünk.<br>
-        Ez a program hivatalosan is jóváhagyva.
+        Helyszín: <b>COCOON Restaurant</b>
       </p>
 
       <a class="button" target="_blank"
          href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x474489005dd632cf:0x960149342754efee?sa=X&ved=1t:8290&ictx=111">
-        Megnyitás Google Mapsben
+        📍 COCOON megnyitása térképen
+      </a>
+    </div>
+
+    <div class="program">
+      <h3>🎬 Második küldetés – Mozi</h3>
+      <p>
+        A tervezett film sajnos kiesett a rostán, ezért most demokratikus diktatúra van:
+        Tomi választhat filmet.
+      </p>
+
+      <a class="button" target="_blank"
+         href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x474487ef3a185823:0x8844a2ac76936764?sa=X&ved=1t:8290&ictx=111">
+        📍 Mozi megnyitása térképen
+      </a>
+
+      <h4>Választható filmek:</h4>
+
+      <button onclick="chooseMovie('A mandalóri és Grogu')">A mandalóri és Grogu</button>
+      <button onclick="chooseMovie('A zongorahangoló')">A zongorahangoló</button>
+      <button onclick="chooseMovie('Az univerzum védelmezői')">Az univerzum védelmezői</button>
+      <button onclick="chooseMovie('Birkakrimi')">Birkakrimi</button>
+      <button onclick="chooseMovie('Horrorra akadva')">Horrorra akadva</button>
+      <button onclick="chooseMovie('Toy Story 5')">Toy Story 5</button>
+
+      <p id="movieChoice" style="font-size:20px; font-weight:bold; margin-top:20px;"></p>
+
+      <a class="button" target="_blank"
+         href="https://www.cinemacity.hu/cinemas/szeged/1126#/buy-tickets-by-cinema?in-cinema=1126&at=2026-06-23&view-mode=list">
+        🎟️ Időpontok és jegyek
       </a>
     </div>
 
     <button onclick="showSecret()">Mi jön utána?</button>
   </div>
 
-<div class="program">
-  <h3>🎬 Második küldetés – Mozi</h3>
-  <p>
-    A tervezett film sajnos kiesett a rostán, ezért most demokratikus diktatúra van:
-    Tomi választhat filmet.
-  </p>
-
-  <a class="button" target="_blank"
-     href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x474487ef3a185823:0x8844a2ac76936764?sa=X&ved=1t:8290&ictx=111">
-    📍 Mozi megnyitása térképen
-  </a>
-
-  <h4>Választható filmek:</h4>
-
-  <button onclick="chooseMovie('A mandalóri és Grogu')">A mandalóri és Grogu</button>
-  <button onclick="chooseMovie('A zongorahangoló')">A zongorahangoló</button>
-  <button onclick="chooseMovie('Az univerzum védelmezői')">Az univerzum védelmezői</button>
-  <button onclick="chooseMovie('Birkakrimi')">Birkakrimi</button>
-  <button onclick="chooseMovie('Horrorra akadva')">Horrorra akadva</button>
-  <button onclick="chooseMovie('Toy Story 5')">Toy Story 5</button>
-
-  <p id="movieChoice" style="font-size:20px; font-weight:bold; margin-top:20px;"></p>
-
-  <a class="button" target="_blank"
-     href="https://www.cinemacity.hu/cinemas/szeged/1126#/buy-tickets-by-cinema?in-cinema=1126&at=2026-06-23&view-mode=list">
-    🎟️ Időpontok és jegyek
-  </a>
-</div>
+  <div id="titok" class="card hidden">
+    <h2>🤫 A többi program...</h2>
+    <p>
+      ...egyelőre titkos.<br><br>
+      Türelem. A szülinapi bizottság dolgozik.
+    </p>
+    <div class="meme">🕵️‍♂️🎉</div>
+  </div>
 
   <p class="small">
     Készült szeretettel, minimális technikai pánikkal.
@@ -150,6 +139,11 @@
 
     function showSecret() {
       document.getElementById("titok").classList.remove("hidden");
+    }
+
+    function chooseMovie(movie) {
+      document.getElementById("movieChoice").innerHTML =
+        "Tomi döntése: " + movie + " 🎬<br>Most már nincs visszaút.";
     }
   </script>
 
