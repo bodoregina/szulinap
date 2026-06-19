@@ -1,5 +1,138 @@
-<h1>Boldog szülinapot! 🎂</h1>
-<p>Az első program: vacsora a COCOON Restaurant-ban 🍽️</p>
-<a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x474489005dd632cf:0x960149342754efee?sa=X&ved=1t:8290&ictx=111">
-Megnyitás Google Mapsben
-</a>
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tomi szülinapi hadművelet</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #141e30, #243b55);
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+
+    .card {
+      max-width: 700px;
+      margin: 30px auto;
+      background: rgba(255,255,255,0.12);
+      padding: 30px;
+      border-radius: 25px;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 20px;
+      opacity: 0.9;
+    }
+
+    .meme {
+      font-size: 60px;
+      margin: 25px 0;
+    }
+
+    .program {
+      background: rgba(255,255,255,0.16);
+      margin: 20px 0;
+      padding: 22px;
+      border-radius: 20px;
+    }
+
+    button, a.button {
+      display: inline-block;
+      margin: 10px;
+      padding: 14px 22px;
+      background: #ffcc00;
+      color: #111;
+      text-decoration: none;
+      border: none;
+      border-radius: 999px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover, a.button:hover {
+      transform: scale(1.05);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .small {
+      font-size: 14px;
+      opacity: 0.8;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>🎂 Tomi 33 lett 🎂</h1>
+    <p class="subtitle">Hivatalos szülinapi hadművelet indul.</p>
+
+    <div class="meme">😎🍽️🎁</div>
+
+    <p>
+      Kedves Tomi!<br>
+      A mai nap célja: túlélni a meglepetéseket, enni valami jót,
+      és közben úgy tenni, mintha nem lennél meghatódva.
+    </p>
+
+    <button onclick="showProgram()">Kérem a programot, főnök</button>
+  </div>
+
+  <div id="programok" class="card hidden">
+    <h2>📍 Első küldetés</h2>
+
+    <div class="program">
+      <h3>🍽️ Vacsora – COCOON Restaurant</h3>
+      <p>
+        Kezdésként nem szenvedünk, hanem eszünk.<br>
+        Ez a program hivatalosan is jóváhagyva.
+      </p>
+
+      <a class="button" target="_blank"
+         href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x474489005dd632cf:0x960149342754efee?sa=X&ved=1t:8290&ictx=111">
+        Megnyitás Google Mapsben
+      </a>
+    </div>
+
+    <button onclick="showSecret()">Mi jön utána?</button>
+  </div>
+
+  <div id="titok" class="card hidden">
+    <h2>🤫 A többi program...</h2>
+    <p>
+      ...egyelőre titkos.<br><br>
+      Türelem. A szülinapi bizottság dolgozik.
+    </p>
+
+    <div class="meme">🕵️‍♂️🎉</div>
+  </div>
+
+  <p class="small">
+    Készült szeretettel, minimális technikai pánikkal.
+  </p>
+
+  <script>
+    function showProgram() {
+      document.getElementById("programok").classList.remove("hidden");
+    }
+
+    function showSecret() {
+      document.getElementById("titok").classList.remove("hidden");
+    }
+  </script>
+
+</body>
+</html>
