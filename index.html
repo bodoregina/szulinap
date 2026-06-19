@@ -110,15 +110,34 @@
     <button onclick="showSecret()">Mi jön utána?</button>
   </div>
 
-  <div id="titok" class="card hidden">
-    <h2>🤫 A többi program...</h2>
-    <p>
-      ...egyelőre titkos.<br><br>
-      Türelem. A szülinapi bizottság dolgozik.
-    </p>
+<div class="program">
+  <h3>🎬 Második küldetés – Mozi</h3>
+  <p>
+    A tervezett film sajnos kiesett a rostán, ezért most demokratikus diktatúra van:
+    Tomi választhat filmet.
+  </p>
 
-    <div class="meme">🕵️‍♂️🎉</div>
-  </div>
+  <a class="button" target="_blank"
+     href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x474487ef3a185823:0x8844a2ac76936764?sa=X&ved=1t:8290&ictx=111">
+    📍 Mozi megnyitása térképen
+  </a>
+
+  <h4>Választható filmek:</h4>
+
+  <button onclick="chooseMovie('A mandalóri és Grogu')">A mandalóri és Grogu</button>
+  <button onclick="chooseMovie('A zongorahangoló')">A zongorahangoló</button>
+  <button onclick="chooseMovie('Az univerzum védelmezői')">Az univerzum védelmezői</button>
+  <button onclick="chooseMovie('Birkakrimi')">Birkakrimi</button>
+  <button onclick="chooseMovie('Horrorra akadva')">Horrorra akadva</button>
+  <button onclick="chooseMovie('Toy Story 5')">Toy Story 5</button>
+
+  <p id="movieChoice" style="font-size:20px; font-weight:bold; margin-top:20px;"></p>
+
+  <a class="button" target="_blank"
+     href="https://www.cinemacity.hu/cinemas/szeged/1126#/buy-tickets-by-cinema?in-cinema=1126&at=2026-06-23&view-mode=list">
+    🎟️ Időpontok és jegyek
+  </a>
+</div>
 
   <p class="small">
     Készült szeretettel, minimális technikai pánikkal.
