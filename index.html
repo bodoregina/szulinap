@@ -86,6 +86,61 @@ a.button:hover{
     opacity:.8;
     font-size:14px;
 }
+    .gift-grid{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:25px;
+}
+
+.gift-card{
+    width:180px;
+    height:180px;
+    perspective:1000px;
+    cursor:pointer;
+}
+
+.gift-inner{
+    position:relative;
+    width:100%;
+    height:100%;
+    transition:transform 0.7s;
+    transform-style:preserve-3d;
+}
+
+.gift-card.flipped .gift-inner{
+    transform:rotateY(180deg);
+}
+
+.gift-front,
+.gift-back{
+    position:absolute;
+    width:100%;
+    height:100%;
+    backface-visibility:hidden;
+    border-radius:22px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:26px;
+    font-weight:bold;
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+.gift-front{
+    background:#ffcc00;
+    color:#111;
+    font-size:70px;
+}
+
+.gift-back{
+    background:#4CAF50;
+    color:white;
+    transform:rotateY(180deg);
+    padding:15px;
+    box-sizing:border-box;
+}
 </style>
 </head>
 
@@ -202,26 +257,44 @@ a.button:hover{
         </a>
 
     </div>
+<div id="gifts" class="card hidden">
 
-    <button onclick="showSecret()">
-        🤫 Mi jön még?
-    </button>
-
-</div>
-
-<div id="secret" class="card hidden">
-
-    <h2>🤫 További információ</h2>
+    <h2>🎁 Harmadik küldetés</h2>
 
     <p>
-        A szülinapi bizottság szerint
-        egyelőre ennyi információ elegendő.
+        A szülinapi bizottság három hivatalos ajándékopciót hagyott jóvá.
         <br><br>
-        A következő meglepetés
-        megfelelő időben kerül nyilvánosságra.
+        Kattints a dobozokra, és derítsd ki, mit nyertél.
     </p>
 
-    <div class="meme">🕵️‍♂️🎉</div>
+    <div class="gift-grid">
+
+        <div class="gift-card" onclick="flipGift(this)">
+            <div class="gift-inner">
+                <div class="gift-front">🎁</div>
+                <div class="gift-back">Masszázs kupon 💆‍♂️</div>
+            </div>
+        </div>
+
+        <div class="gift-card" onclick="flipGift(this)">
+            <div class="gift-inner">
+                <div class="gift-front">🎁</div>
+                <div class="gift-back">PS kupon 🎮</div>
+            </div>
+        </div>
+
+        <div class="gift-card" onclick="flipGift(this)">
+            <div class="gift-inner">
+                <div class="gift-front">🎁</div>
+                <div class="gift-back">Ölelés 🤗</div>
+            </div>
+        </div>
+
+    </div>
+
+    <button onclick="showSecret()">
+        🎁 Jöhetnek az ajándékok
+    </button>
 
 </div>
 
