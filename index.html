@@ -86,7 +86,7 @@ a.button:hover{
     opacity:.8;
     font-size:14px;
 }
-    .gift-grid{
+.gift-grid{
     display:flex;
     justify-content:center;
     gap:20px;
@@ -175,20 +175,14 @@ a.button:hover{
 </div>
 
 <div id="dinner" class="card hidden">
-
     <h2>🍽️ Első küldetés</h2>
 
     <div class="program">
         <h3>COCOON Restaurant</h3>
-
         <p>
-            Kezdésként nem szenvedünk,
-            hanem eszünk. Ebéd az egyik kedvenc éttermünkben. 
+            Kezdésként nem szenvedünk, hanem eszünk. Ebéd az egyik kedvenc éttermünkben. 
         </p>
-
-        <a class="button"
-           target="_blank"
-           href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x474489005dd632cf:0x960149342754efee?sa=X&ved=1t:8290&ictx=111">
+        <a class="button" target="_blank" href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x474489005dd632cf:0x960149342754efee?sa=X&ved=1t:8290&ictx=111">
             📍 Térkép megnyitása
         </a>
     </div>
@@ -196,69 +190,43 @@ a.button:hover{
     <button onclick="showMovie()">
         ✅ Ízlett az ebéd. Hogyan tovább?
     </button>
-
 </div>
 
 <div id="movieSection" class="card hidden">
-
     <h2>🎬 Második küldetés</h2>
 
     <div class="program">
-
         <h3>Mozi</h3>
-
         <p>
-            Az eredeti filmterv sajnos meghiúsult.
-            <br><br>
-            Ezért a szülinapi bizottság
-            rendkívüli jogköröket biztosít:
-            <br>
+            Az eredeti filmterv sajnos meghiúsult.<br><br>
+            Ezért a szülinapi bizottság rendkívüli jogköröket biztosít:<br>
             Te választhatod ki a filmet.
         </p>
 
-        <a class="button"
-           target="_blank"
-           href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x474487ef3a185823:0x8844a2ac76936764?sa=X&ved=1t:8290&ictx=111">
+        <a class="button" target="_blank" href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x474487ef3a185823:0x8844a2ac76936764?sa=X&ved=1t:8290&ictx=111">
             📍 Mozi megnyitása
         </a>
 
         <br>
 
-        <button class="movie-btn" onclick="chooseMovie('A mandalóri és Grogu', this)">
-            A mandalóri és Grogu
-        </button>
-
-        <button class="movie-btn" onclick="chooseMovie('A zongorahangoló', this)">
-            A zongorahangoló
-        </button>
-
-        <button class="movie-btn" onclick="chooseMovie('Az univerzum védelmezői', this)">
-            Az univerzum védelmezői
-        </button>
-
-        <button class="movie-btn" onclick="chooseMovie('Birkakrimi', this)">
-            Birkakrimi
-        </button>
-
-        <button class="movie-btn" onclick="chooseMovie('Horrorra akadva', this)">
-            Horrorra akadva
-        </button>
-
-        <button class="movie-btn" onclick="chooseMovie('Toy Story 5', this)">
-            Toy Story 5
-        </button>
+        <button class="movie-btn" onclick="chooseMovie('A mandalóri és Grogu', this)">A mandalóri és Grogu</button>
+        <button class="movie-btn" onclick="chooseMovie('A zongorahangoló', this)">A zongorahangoló</button>
+        <button class="movie-btn" onclick="chooseMovie('Az univerzum védelmezői', this)">Az univerzum védelmezői</button>
+        <button class="movie-btn" onclick="chooseMovie('Birkakrimi', this)">Birkakrimi</button>
+        <button class="movie-btn" onclick="chooseMovie('Horrorra akadva', this)">Horrorra akadva</button>
+        <button class="movie-btn" onclick="chooseMovie('Toy Story 5', this)">Toy Story 5</button>
 
         <p id="movieChoice"></p>
 
-        <a class="button"
-           target="_blank"
-           href="https://www.cinemacity.hu/cinemas/szeged/1126#/buy-tickets-by-cinema?in-cinema=1126&at=2026-06-23&view-mode=list">
+        <a class="button" target="_blank" href="https://www.cinemacity.hu/cinemas/szeged/1126#/buy-tickets-by-cinema?in-cinema=1126&at=2026-06-23&view-mode=list">
             🎟️ Vetítések és jegyek
         </a>
-
     </div>
-<div id="gifts" class="card hidden">
 
+    <button onclick="showGifts()">
+        🎁 Megvan a film, jöhetnek az ajándékok!
+    </button>
+</div> <div id="gifts" class="card hidden">
     <h2>🎁 Harmadik küldetés</h2>
 
     <p>
@@ -268,7 +236,6 @@ a.button:hover{
     </p>
 
     <div class="gift-grid">
-
         <div class="gift-card" onclick="flipGift(this)">
             <div class="gift-inner">
                 <div class="gift-front">🎁</div>
@@ -289,13 +256,7 @@ a.button:hover{
                 <div class="gift-back">Ölelés 🤗</div>
             </div>
         </div>
-
     </div>
-
-    <button onclick="showSecret()">
-        🎁 Jöhetnek az ajándékok
-    </button>
-
 </div>
 
 <p class="small">
@@ -308,17 +269,20 @@ function showDinner(){
 }
 
 function showMovie(){
+    document.getElementById("dinner").scrollIntoView({behavior: "smooth"});
     document.getElementById("movieSection").classList.remove("hidden");
 }
+
 function showGifts(){
     document.getElementById("gifts").classList.remove("hidden");
+    // Automatikusan odagördít az ajándékokhoz, hogy Tomi egyből lássa
+    setTimeout(() => {
+        document.getElementById("gifts").scrollIntoView({behavior: "smooth"});
+    }, 100);
 }
 
 function flipGift(card){
     card.classList.toggle("flipped");
-}
-function showSecret(){
-    document.getElementById("secret").classList.remove("hidden");
 }
 
 function chooseMovie(movie, button){
